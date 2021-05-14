@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_06_014150) do
+ActiveRecord::Schema.define(version: 2021_05_11_021642) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -42,7 +42,7 @@ ActiveRecord::Schema.define(version: 2021_05_06_014150) do
   create_table "liquors", force: :cascade do |t|
     t.integer "user_id"
     t.string "name"
-    t.string "image"
+    t.string "liquor_image_id"
     t.text "introduction"
     t.string "genre"
     t.string "restaurant_name"
@@ -80,7 +80,7 @@ ActiveRecord::Schema.define(version: 2021_05_06_014150) do
     t.datetime "remember_created_at"
     t.string "name"
     t.text "introduction"
-    t.string "image_"
+    t.string "user_image_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true

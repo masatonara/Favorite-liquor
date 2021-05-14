@@ -1,5 +1,7 @@
 class User::RestaurantsController < ApplicationController
-
+  before_action :authenticate_user!
+  before_action :ensure_correct_user, only: [:new, :edit, :update, :destroy]
+  
   def index
     @restaurants = Restaurant.all
     @restaurant = Restaurant.new

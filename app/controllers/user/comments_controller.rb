@@ -3,8 +3,9 @@ class User::CommentsController < ApplicationController
 
 	def create
 		@liquor = Liquor.find(params[:liquor_id])
+		@liquor_new = Liquor.new
 		@comment = Comment.new(comment_params)
-		@comment.riquor_id = @liquor.id
+		@comment.liquor_id = @liquor.id
 		@comment.user_id = current_user.id
 		if @comment.save
   		redirect_to liquor_path(@liquor.id)
@@ -24,6 +25,6 @@ class User::CommentsController < ApplicationController
 	def comment_params
 		params.require(:comment).permit(:comment)
 	end
-  
-  
+
+
 end

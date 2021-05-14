@@ -18,3 +18,10 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+
+<!-- Note: A custom script is used to activate tooltips:
+
+$(function(){
+  $('[data-toggle="tooltip"]').tooltip();
+});
+-->

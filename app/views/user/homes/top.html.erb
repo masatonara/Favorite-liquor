@@ -1,1 +1,22 @@
-<h1>トップ</h1>
+<div class="top container">
+  <div class="row">
+    <div class="col-lg-12 top-box">
+      <h1 class="top-title">
+        Welcome to Favorite Liquor
+      </h1>
+
+      <h3 class="toptext">
+        <span>お酒との出会いは一期一会</span> <br/>
+        あなたの一番のお気に入りを見つけよう
+      </h3>
+
+      <div class="signup-button">
+        <%= link_to "sign_up", new_user_registration_path, class: "btn btn-block btn-sm btn-dark mb-3 sign_in" %>
+      </div>
+      <div class="login-button">
+        <%= link_to "Log in", new_user_session_path, class: "btn btn-block btn-sm btn-dark mb-3 sign_up" %>
+      </div>
+
+    </div>
+  </div>
+</div>

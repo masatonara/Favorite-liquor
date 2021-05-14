@@ -5,18 +5,21 @@ class User::LiquorsController < ApplicationController
   def show
     @liquor = Liquor.find(params[:id])
     @comment = Comment.new
+    @user = current_user
   end
 
   def index
     @liquors = Liquor.all
+    @user = current_user
   end
 
   def new
     @liquor = Liquor.new
+    @user = current_user
   end
 
   def create
-    @liquor = Liquor.new(book_params)
+    @liquor = Liquor.new(liquor_params)
     @liquor.user_id = current_user.id
     if @liquor.save
       redirect_to liquor_path(@liquor), notice: "投稿されました"
@@ -45,7 +48,7 @@ class User::LiquorsController < ApplicationController
   private
 
   def liquor_params
-    params.require(:liquor).permit(:name, :image, :introduction, :genre, :restaurant_name, :restaurant_address, :day, :rating)
+    params.require(:liquor).permit(:liquor_image, :name, :introduction, :genre, :restaurant_name, :restaurant_address, :day, :rating)
   end
 
   def ensure_correct_user

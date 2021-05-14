@@ -4,17 +4,17 @@
 <%= form_with model:@liquor,local:true do |f| %>
 
   <div class="form-group">
-    <%= f.label :image %>
-    <%= f.attachment_field :image, class: "form-control-file liquor_image" %>
+    <%= f.label :写真 %>
+    <%= f.attachment_field :liquor_image, class: "form-control-file" %>
   </div>
 
   <div class="form-group">
     <%= f.label :銘柄 %>
-    <%= f.text_field :name, class: 'form-control book_title' %>
+    <%= f.text_field :name, class: "form-control" %>
   </div>
   <div class="form-group">
     <%= f.label :説明 %>
-    <%= f.text_area :introduction, class: 'form-control book_body' %>
+    <%= f.text_area :introduction,  class: "form-control"%>
   </div>
 
   <div class="form-group">
@@ -24,22 +24,22 @@
 
   <div class="form-group">
     <%= f.label :店名 %>
-    <%= f.text_area :restaurant_name, class: 'form-control book_body' %>
+    <%= f.text_area :restaurant_name, class: "form-control"%>
   </div>
 
   <div class="form-group">
     <%= f.label :住所 %>
-    <%= f.text_area :restaurant_address, class: 'form-control book_body' %>
+    <%= f.text_area :restaurant_address, class: "form-control" %>
   </div>
 
   <div class="form-group">
     <%= f.label :日付 %>
-    <%= f.text_area :day, class: 'form-control book_body' %>
+    <%= f.text_area :day %>
   </div>
 
   <div class="form-group">
     <%= f.label :評価 %>
-    <%= f.text_area :rating, class: 'form-control book_body' %>
+    <%= f.text_area :rating %>
   </div>
 
 

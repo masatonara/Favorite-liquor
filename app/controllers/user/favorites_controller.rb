@@ -2,7 +2,7 @@ class User::FavoritesController < ApplicationController
   before_action :authenticate_user!
 
   def create
-    @liquor = Liquor.find(params[:book_id])
+    @liquor = Liquor.find(params[:liquor_id])
     favorite = @liquor.favorites.new(user_id: current_user.id)
     favorite.save
     redirect_to request.referer

@@ -13,6 +13,43 @@
  *= require_tree .
  *= require_self
  */
+ // Bootstrapを読み込ませるための3行
 @import "bootstrap";
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+
+
+body{
+	margin: 0;
+	padding: 0;
+	background: #fff;
+  background-image: image-url("image1.jpg");
+  background-size: cover;
+
+	color: #fff;
+	font-family: Arial;
+	font-size: 12px;
+}
+
+.registration-new, .top {
+  text-align: center;
+}
+
+.top-box {
+  margin-top: 100px;
+}
+
+.top-text {
+  margin-top: 20px;
+}
+
+
