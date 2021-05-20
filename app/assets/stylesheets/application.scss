@@ -17,6 +17,7 @@
 @import "bootstrap";
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
+@import url('https://fonts.googleapis.com/css?family=Alegreya+Sans+SC:300');
 
 
 * {
@@ -27,29 +28,286 @@
 }
 
 
-
 body{
 	margin: 0;
 	padding: 0;
-	background: #fff;
-  background-image: image-url("image1.jpg");
-  background-size: cover;
-
-	color: #fff;
-	font-family: Arial;
+	background-image: linear-gradient(-240deg
+, #5f9ea0 0%, #DDA0DE 50%, #dedea0 100% );
+	font-family: 'Alegreya Sans SC', sans-serif;
 	font-size: 12px;
 }
 
-.registration-new, .top {
+//footer部分
+footer {
+  width: 100%;
+  height: 100px;
+}
+
+.footer-text {
+  margin: 40px auto;
+}
+
+//search
+.search {
   text-align: center;
-}
-
-.top-box {
-  margin-top: 100px;
-}
-
-.top-text {
   margin-top: 20px;
 }
 
+//top背景
+.top-image {
+  width: 100%;
+  height: 900px;
+  background-image: image-url("image1.jpg");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.8;
+}
 
+.image-mask {
+  width: 100%;
+  height: 900px;
+  background-color: rgba( 0, 0, 0, 0.5);
+}
+
+//top画面部分
+.top {
+  text-align: center;
+}
+
+.top-title {
+  margin-top: 100px;
+  color: #fff;
+}
+
+.signup-button {
+  margin: 50px auto 20px;
+  width: 700px;
+}
+
+.login-button {
+  margin: auto;
+  width: 700px;
+}
+
+.top-text  {
+  margin-top: 20px;
+  color: #fff;
+}
+//log_in部分
+.login-content {
+  margin: 200px 150px 0px 0px;
+  color: #fff;
+  font-size: 16px;
+}
+
+.signup-link {
+  color: #fff;
+  margin-top: 50px;
+  font-family: sans-serif;
+}
+
+//sign_up部分
+.top-content {
+  margin: 250px 0px 0px 250px;
+  color: #fff;
+}
+
+.signup-content {
+  color: #fff;
+  margin: 150px 150px 0px 0px;
+  font-size: 16px;
+}
+
+.login-link {
+  color: #fff;
+  margin-top: 50px;
+  font-family: sans-serif;
+}
+
+.top-content span {
+  color: #00ff00;
+}
+//signupの入力部分
+.field input[type=text]  {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.6);
+  color: #fff;
+  font-size: 16px;
+}
+
+.field input[type=email] {
+  width: 300px;
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.6);
+  color: #fff;
+  font-size: 16px;
+}
+
+.field input[type=password] {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.6);
+  color: #fff;
+  font-size: 16px;
+}
+
+//user/show
+.user-image-box {
+  margin-left: 150px;
+  margin-top: 20px;
+}
+
+.user-profile-box {
+  margin-top: 20px;
+}
+
+.user-name, .user-follow, .user-introduction {
+  margin-bottom: 10px;
+}
+
+.introduction-box {
+  margin-left: 0;
+}
+
+.p-2 {
+  margin-right: 20px
+}
+
+.card-show {
+  padding: auto;
+}
+
+//user/edit
+
+
+.user-edit {
+  margin-top: 20px;
+  padding: 20px 20px;
+  width: 100%;
+  border: solid 1px #a9a9a9;
+}
+
+//liquor/index部分
+.card {
+  width: 400px;
+  margin: auto;
+  margin-top: 20px;
+}
+
+.plofile-box {
+  margin-top: 20px;
+}
+
+//liquor/new部分
+.liquor-post {
+  margin: 10px;
+}
+
+
+//liquor/show部分
+.liquor-show {
+  margin: 10px;
+}
+
+.liquor-image {
+  margin-left: 70px;
+  margin-top: 20px;
+  width: 400px;
+  border: solid 1px #a9a9a9;
+}
+
+.liquor-show-text {
+  margin-top: 20px;
+  margin-right: 80px;
+  background-color: #fff;
+  width: 250px;
+  height: 400px;
+  border: solid 1px #a9a9a9;
+}
+
+.liquor-user {
+  border-bottom: solid 1px #a9a9a9;
+  font-size: 16px;
+  font-family: Arial;
+}
+
+.liquor-user-image {
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+
+.liquor-user-name {
+  margin-left: 10px;
+}
+
+
+.liquor-name {
+  font-size: 16px;
+  font-family: Arial;
+  border-bottom: solid 1px #a9a9a9;
+}
+
+.liquor-name-text {
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+
+.liquor-introduction {
+  padding-left: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-bottom: solid 1px #a9a9a9;
+  font-size: 16px;
+}
+
+.liquor-rate {
+  padding-left: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 16px;
+}
+
+.favorite-comment {
+  padding-left: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 16px;
+
+}
+
+.liquor-day {
+  padding-left: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 16px;
+}
+
+.restaurant-info {
+  margin-top: 20px;
+  background-color: #fff;
+  width: 400px;
+  height: 400px;
+}
+
+.slide-item {
+  width: 300px;
+  height: 300px;
+}
+
+#slidber {
+    text-align: center;
+    font-size: 18px;
+    // width: 600px;
+
+    /* テキストを中央揃え */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    // align-items: center;
+}

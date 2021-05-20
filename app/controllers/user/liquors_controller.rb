@@ -5,17 +5,25 @@ class User::LiquorsController < ApplicationController
   def show
     @liquor = Liquor.find(params[:id])
     @comment = Comment.new
-    @user = current_user
+  end
+
+  def map
+  results = Geocoder.search(params[:restaurant_address])
+  @latlng = results.first.coordinates
+  # これでmap.js.erbで、経度緯度情報が入った@latlngを使える。
+
+  respond_to do |format|
+    format.js
+  end
   end
 
   def index
     @liquors = Liquor.all
-    @user = current_user
+    @random = User.order('RANDOM()').limit(5)
   end
 
   def new
     @liquor = Liquor.new
-    @user = current_user
   end
 
   def create
@@ -48,7 +56,7 @@ class User::LiquorsController < ApplicationController
   private
 
   def liquor_params
-    params.require(:liquor).permit(:liquor_image, :name, :introduction, :genre, :restaurant_name, :restaurant_address, :day, :rating)
+    params.require(:liquor).permit(:liquor_image, :name, :introduction, :genre_id, :restaurant_name, :restaurant_address, :day, :rate)
   end
 
   def ensure_correct_user

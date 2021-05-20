@@ -8,7 +8,6 @@
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav ml-auto">
         <% if user_signed_in? %>
-          <li class="search center"><%= render 'layouts/search' %></li>
           <li>
             <button type="button" class="btn btn-light mx-1" data-toggle="tooltip" data-placement="bottom" title="ユーザー一覧">
               <%= link_to users_path do %>
@@ -30,7 +29,7 @@
               </button>
               <div class="dropdown-menu text-center">
                 <h6 class="dropdown-header">マイメニュー</h6>
-                  <a class="dropdown-item" ><%= link_to "マイページ", user_path(@user) %></a>
+                  <a class="dropdown-item" ><%= link_to "マイページ", user_path(current_user) %></a>
                   <a class="dropdown-item" ><%= link_to "ログアウト", destroy_user_session_path,method: :delete %></a>
               </div>
             </div>

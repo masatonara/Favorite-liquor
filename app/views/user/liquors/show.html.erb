@@ -1,32 +1,107 @@
 <div class='container'>
   <div class='row'>
 
-    <div class='col-md-8 offset-md-1'>
-  		<h2>投稿詳細</h2>
-  		<table class='table'>
-  		  <tr>
-  		    <td><%= link_to user_path(@liquor.user) do %>
-            <%= attachment_image_tag(@liquor.user, :user_image, :fill, 100, 100, fallback: "no_image.jpeg") %><br>
-            <%= @liquor.user.name %>
-            <% end %>
-          </td>
-          <td><%= attachment_image_tag(@liquor, :liquor_image, :fill, 100, 100, fallback: "no_image.jpeg") %></td>
-          <td><%= link_to @liquor.name %></td>
-          <td><%= @liquor.introduction %></td>
-          <td><%= @liquor.genre %></td>
-          <td><%= @liquor.restaurant_name %></td>
-          <td><%= @liquor.restaurant_address %></td>
-          <td><%= @liquor.day %></td>
-          <td><%= @liquor.rating %></td>
-          <td class="favorite-btn"><%= render "user/favorites/btn", liquor: @liquor %></td>
-          <td>コメント数: <%= @liquor.comments.count %></td>
-          <% if @liquor.user == current_user %>
-            <td><%= link_to 'Edit', edit_liquor_path(@liquor), class: "btn btn-sm btn-success edit_liquor_#{@liquor.id}" %></td>
-            <td><%= link_to 'Destroy', liquor_path(@liquor), method: :delete, data: { confirm: '本当に消しますか？' }, class: "btn btn-sm btn-danger destroy_liquor_#{@liquor.id}"%></td>
-          <% end %>
+    <div class='col-md-5'>
+  		<div class="liquor-image">
+  		  <%= attachment_image_tag(@liquor, :liquor_image, :fill, 400, 400, fallback: "no_image.jpeg") %>
+  		</div>
+  	</div>
+
+    <div class='col-md-3'>
+        <div class="liquor-show-text">
+          <div class="liquor-user">
+            <div class="liquor-user-image">
+              <%= link_to user_path(@liquor.user) do %>
+                <%= attachment_image_tag @liquor.user, :user_image, :fill, 50, 50, fallback: "no_image.jpeg",size: "50x50", class:"rounded-circle";  %>
+              <% end %>
+              <span class="liquor-user-name"><%= @liquor.user.name %></span>
+            </div>
+          </div>
+          <div class="liquor-name">
+            <div class="liquor-name-text">
+              <i class="fas fa-glass-martini-alt"></i> <%= @liquor.name %>
+            </div>
+          </div>
+          <div class="liquor-introduction">
+            <%= @liquor.introduction %>
+          </div>
+          <div class="liquor-rate">
+            <i class="far fa-star"></i> <%= @liquor.rate %>点
+            <div id="star-rate-<%= @liquor.id %>"></div>
+            <script>
+            $('#star-rate-<%= @liquor.id %>').raty({
+              size: 36,
+              starOff:  '<%= asset_path('star-off.png') %>',
+              starOn : '<%= asset_path('star-on.png') %>',
+              starHalf: '<%= asset_path('star-half.png') %>',
+              half: true,
+              readOnly: true,
+              score: <%= @liquor.rate %>,
+            });
+            </script>
+          </div>
+
+          <div class="favorite-comment">
+            <%= render "user/favorites/btn", liquor: @liquor %>
+            <spann><i class="fas fa-comments"></i> コメント数: <%= @liquor.comments.count %></span>
+          </div>
+          <div class="liquor-day"><i class="fas fa-calendar-alt"></i> <%= @liquor.day %></div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+      <table class="restaurant-info table table-bordered">
+        <tr>
+          <th>店名</th>
+          <th><%= @liquor.restaurant_name %></th>
+        </tr>
+        <tr>
+          <th>住所</th>
+          <th><%= @liquor.restaurant_address %></th>
+        </tr>
+        <tr>
+          <th>マップ</th>
+          <th>
+          <div id='map'></div>
+
+            <style>
+            #map{
+              width: 300px;
+              height: 300px;
+            }
+            </style>
+
+            <script>
+              let mapInstance //この変数はmap.js.erbでも使うのでタイプミスに注意
+
+              function initMap(){
+                mapInstance = new google.maps.Map(document.getElementById('map'), {
+                center: {lat: -34.397, lng: 150.644},
+                zoom: 8
+                });
+              }
+            </script>
+
+            <script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAP_API_KEY'] %>&callback=initMap" async defer></script>
+
+          </th>
         </tr>
       </table>
-      <%= render 'user/liquors/comment', liquor: @liquor,comment: @comment%>
+    </div>
+    <div class="col-md-12">
+    <% if @liquor.user == current_user %>
+      <div><%= link_to 'Edit', edit_liquor_path(@liquor), class: "btn btn-sm btn-success edit_liquor_#{@liquor.id}" %></div>
+      <div><%= link_to 'Destroy', liquor_path(@liquor), method: :delete, data: { confirm: '本当に消しますか？' }, class: "btn btn-sm btn-danger destroy_liquor_#{@liquor.id}"%></div>
+    <% end %>
+    <%= render 'user/comments/index', liquor: @liquor %>
+    <div class="input-group">
+      <%= form_with model:[@liquor,@comment] do |f| %>
+      <div class="form">
+        <%= f.text_field :comment, size:"40x5", class: "form-control" %>
+        <%= f.submit '送信', class: "btn btn-success" %>
+      </div>
+    <% end %>
+    </div>
     </div>
   </div>
 </div>

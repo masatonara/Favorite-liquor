@@ -10,12 +10,8 @@
     	</td>
     	<td><%= comment.comment %></td>
     	<% if current_user == comment_user %>
-      	<td><%= link_to 'Destroy', liquor_comment_path(comment.liquor_id, comment.id), method: :delete %></td>
+      	<td><%= link_to 'Destroy', liquor_comment_path(comment.liquor_id, comment.id), method: :delete, remote: true %></td>
     	<% end %>
     </tr>
   <% end %>
 </table>
-<%= form_with model:[@liquor,@comment], local: true do |f| %>
-  <%= f.text_area :comment, size:"90x5" %><br>
-  <%= f.submit '送信'%>
-<% end %>

@@ -14,6 +14,7 @@
 //= require popper
 //= require bootstrap-sprockets
 
+//= require jquery.raty.js
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
@@ -25,3 +26,11 @@ $(function(){
   $('[data-toggle="tooltip"]').tooltip();
 });
 -->
+
+$(function() {
+    $('.liquor-randam').slick({
+        infinite: true,
+         slidesToShow: 3,
+         slidesToScroll: 3
+    });
+});

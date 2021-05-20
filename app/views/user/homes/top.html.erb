@@ -1,11 +1,17 @@
-<div class="top container">
+<div class="top-image">
+  <div class="image-mask">
+  <div class="top container">
   <div class="row">
     <div class="col-lg-12 top-box">
+      <% if user_signed_in? %>
+      <%= render 'user/homes/slidber', random: @random %>
+
+      <% else %>
       <h1 class="top-title">
         Welcome to Favorite Liquor
       </h1>
 
-      <h3 class="toptext">
+      <h3 class="top-text">
         <span>お酒との出会いは一期一会</span> <br/>
         あなたの一番のお気に入りを見つけよう
       </h3>
@@ -16,7 +22,8 @@
       <div class="login-button">
         <%= link_to "Log in", new_user_session_path, class: "btn btn-block btn-sm btn-dark mb-3 sign_up" %>
       </div>
-
+      <% end %>
     </div>
+  </div>
   </div>
 </div>

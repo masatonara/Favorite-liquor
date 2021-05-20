@@ -1,14 +1,11 @@
 class ApplicationController < ActionController::Base
 
-  private
+  before_action :configure_permitted_parameters, if: :devise_controller?
 
-  def configure_permitted_parameters
-      devise_parameter_sanitizer.permit(:sign_up,
-  			 keys: [:name, :email, :password])
-
+  protected
 
   def after_sign_in_path_for(resource)
-    liquor_path(resource)
+    user_path(resource)
   end
 
   def after_sign_out_path_for(resource)
@@ -16,9 +13,12 @@ class ApplicationController < ActionController::Base
   end
 
 
-      #sign_upの際にnameのデータ操作を許。追加したカラム。
+  def configure_permitted_parameters
+   devise_parameter_sanitizer.permit(:sign_up,
+  	keys: [:name, :email])
+
+     #sign_upの際にnameのデータ操作を許。追加したカラム。
   		devise_parameter_sanitizer.permit(:sign_in, keys: [:email])
 
   end
-
 end

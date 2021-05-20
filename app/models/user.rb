@@ -5,7 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   
   has_many :liquors
-  has_many :restaurants
   has_many :favorites, dependent: :destroy
 	has_many :comments, dependent: :destroy
   attachment :user_image, destroy: false

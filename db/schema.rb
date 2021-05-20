@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_11_021642) do
+ActiveRecord::Schema.define(version: 2021_05_18_062200) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -39,16 +39,25 @@ ActiveRecord::Schema.define(version: 2021_05_11_021642) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "genres", force: :cascade do |t|
+    t.string "genre_name"
+    t.boolean "is_valid", default: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "liquors", force: :cascade do |t|
     t.integer "user_id"
+    t.integer "genre_id"
     t.string "name"
     t.string "liquor_image_id"
     t.text "introduction"
-    t.string "genre"
     t.string "restaurant_name"
     t.text "restaurant_address"
+    t.float "latitude"
+    t.float "longitude"
     t.date "day"
-    t.float "rating"
+    t.float "rate"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -56,18 +65,6 @@ ActiveRecord::Schema.define(version: 2021_05_11_021642) do
   create_table "relationships", force: :cascade do |t|
     t.integer "follower_id"
     t.integer "followed_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "restaurants", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "liquor_id"
-    t.string "restaurant_name"
-    t.text "restaurant_address"
-    t.string "image"
-    t.text "introduction"
-    t.string "phone"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

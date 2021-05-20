@@ -2,14 +2,16 @@ class CreateLiquors < ActiveRecord::Migration[5.2]
   def change
     create_table :liquors do |t|
       t.integer :user_id
+      t.integer :genre_id
       t.string :name
-      t.string :image
+      t.string :liquor_image_id
       t.text :introduction
-      t.string :genre
       t.string :restaurant_name
       t.text :restaurant_address
+      t.float :latitude
+      t.float :longitude
       t.date :day
-      t.float :rating
+      t.float :rate
       
 
       t.timestamps

@@ -1,11 +1,4 @@
 Rails.application.routes.draw do
-  devise_for :admins, controllers: {
-    sessions: 'devise/admins/sessions',
-    passwords: 'devise/admins/passwords',
-    registrations: 'devise/admins/registrations'
-  }
-
-
   devise_for :users, controllers: {
     sessions: 'devise/users/sessions',
     passwords: 'devise/users/passwords',
@@ -15,11 +8,11 @@ Rails.application.routes.draw do
     root :to =>'user/homes#top'
     get 'about' => 'user/products#about'
     get 'user/search/search'
-    
+
     scope module: :user do
-      resources :liquors, only: [:index, :new, :show, :edit, :create, :destroy, :update] do
-        resource :comments, only: [:create, :destroy]
+      resources :liquors, only: [:show, :index, :new, :edit, :create, :destroy, :update] do
         resource :favorites, only: [:create, :destroy]
+        resources :comments, only: [:create, :destroy]
       end
       resources :users, only: [:index, :show, :edit, :create, :destroy, :update] do
         resource :relationships, only: [:create, :destroy]
