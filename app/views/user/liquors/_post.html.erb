@@ -1,7 +1,7 @@
-<div class="d-flex justify-content-around">
+<div class="liquor-post">
 
   <% liquors.each do |liquor| %>
- <div class="card mx-3">
+ <div class="card post">
     <%= link_to liquor_path(liquor) do %>
       <%= attachment_image_tag liquor, :liquor_image, :fill, 300, 300, fallback: "no_image.jpeg", size: "300x300", class:"card-img-top";  %>
     <% end %>
@@ -17,7 +17,7 @@
               <strong><i class="fas fa-glass-martini-alt"></i><span> <%= liquor.name %></span></strong>
           </p>
           <p class="card-text">説明：<%= liquor.introduction %></p>
-          <%= render "user/favorites/btn", liquor: liquor %>
+          <%= render "user/favorites/favorite", liquor: liquor %>
           コメント数: <%= liquor.comments.count %>
         </div>
       </div>

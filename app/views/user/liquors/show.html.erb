@@ -42,11 +42,14 @@
           </div>
 
           <div class="favorite-comment">
-            <%= render "user/favorites/btn", liquor: @liquor %>
-            <spann><i class="fas fa-comments"></i> コメント数: <%= @liquor.comments.count %></span>
+            <div id="favorite_<%= @liquor.id %>">
+             <%= render partial: 'user/favorites/favorite', locals: { liquor: @liquor} %>
+          </div>
+            <div class="comments-count"><i class="fas fa-comments"></i> コメント数: <%= @liquor.comments.count %></comment>
           </div>
           <div class="liquor-day"><i class="fas fa-calendar-alt"></i> <%= @liquor.day %></div>
         </div>
+      </div>
     </div>
 
     <div class="col-md-3">
@@ -57,34 +60,11 @@
         </tr>
         <tr>
           <th>住所</th>
-          <th><%= @liquor.restaurant_address %></th>
+          <th><%= @liquor.address %></th>
         </tr>
         <tr>
           <th>マップ</th>
-          <th>
-          <div id='map'></div>
-
-            <style>
-            #map{
-              width: 300px;
-              height: 300px;
-            }
-            </style>
-
-            <script>
-              let mapInstance //この変数はmap.js.erbでも使うのでタイプミスに注意
-
-              function initMap(){
-                mapInstance = new google.maps.Map(document.getElementById('map'), {
-                center: {lat: -34.397, lng: 150.644},
-                zoom: 8
-                });
-              }
-            </script>
-
-            <script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAP_API_KEY'] %>&callback=initMap" async defer></script>
-
-          </th>
+          <th><%= render 'user/liquors/map', liquor: @liquor %> </th>
         </tr>
       </table>
     </div>
@@ -93,7 +73,9 @@
       <div><%= link_to 'Edit', edit_liquor_path(@liquor), class: "btn btn-sm btn-success edit_liquor_#{@liquor.id}" %></div>
       <div><%= link_to 'Destroy', liquor_path(@liquor), method: :delete, data: { confirm: '本当に消しますか？' }, class: "btn btn-sm btn-danger destroy_liquor_#{@liquor.id}"%></div>
     <% end %>
-    <%= render 'user/comments/index', liquor: @liquor %>
+    <div class="comments">
+      <%= render 'user/comments/comment', liquor: @liquor %>
+    </div>
     <div class="input-group">
       <%= form_with model:[@liquor,@comment] do |f| %>
       <div class="form">

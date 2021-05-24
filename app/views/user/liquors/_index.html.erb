@@ -15,8 +15,10 @@
               <strong><i class="fas fa-glass-martini-alt"></i></i><span> <%= liquor.name %></span></strong>
           </p>
           <p class="card-text">説明：<%= liquor.introduction %></p>
-          <%= render "user/favorites/btn", liquor: liquor %>
-          コメント数: <%= liquor.comments.count %>
+          <div id="favorite_<%= liquor.id %>">
+             <%= render partial: 'user/favorites/favorite', locals: { liquor: liquor} %>
+          </div>
+          <div class="comments">コメント数: <%= liquor.comments.count %></div>
         </div>
       </div>
     </div>

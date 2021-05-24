@@ -1,3 +1,40 @@
 // Place all the styles related to the user/users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+//user/show
+.user-image-box {
+  margin-left: 150px;
+  margin-top: 20px;
+}
+
+.user-profile-box {
+  margin-top: 20px;
+}
+
+.user-name, .user-follow, .user-introduction {
+  margin-bottom: 10px;
+}
+
+.introduction-box {
+  margin-left: 0;
+}
+
+.p-2 {
+  margin-right: 20px
+}
+
+.card-show {
+  padding: auto;
+}
+
+//user/edit
+
+
+.user-edit {
+  margin-top: 20px;
+  padding: 20px 20px;
+  width: 100%;
+  border: solid 1px #a9a9a9;
+}

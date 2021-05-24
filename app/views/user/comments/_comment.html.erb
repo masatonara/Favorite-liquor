@@ -1,5 +1,5 @@
 <table>
-  <% @liquor.comments.each do |comment| %>
+  <% liquor.comments.each do |comment| %>
     <% comment_user = comment.user %>
     <tr>
     	<td>
@@ -10,7 +10,7 @@
     	</td>
     	<td><%= comment.comment %></td>
     	<% if current_user == comment_user %>
-      	<td><%= link_to 'Destroy', liquor_comment_path(comment.liquor_id, comment.id), method: :delete, remote: true %></td>
+      	<td><%= link_to 'Destroy', liquor_comment_path(comment.liquor_id, comment.id), class: 'btn-sm btn-danger', method: :delete, remote: true %></td>
     	<% end %>
     </tr>
   <% end %>

@@ -1,6 +1,8 @@
 <div class='container'>
   <div class='row'>
     <div class="col-sm-10 mx-auto">
+      <%= render "layouts/error_messages", resource: @user %>
+
       <div class="user-edit">
     <h2>User Edit</h2>
     <%= form_with model:@user, local:true do |f| %>

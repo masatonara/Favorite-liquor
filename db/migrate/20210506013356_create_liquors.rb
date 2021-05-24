@@ -7,12 +7,12 @@ class CreateLiquors < ActiveRecord::Migration[5.2]
       t.string :liquor_image_id
       t.text :introduction
       t.string :restaurant_name
-      t.text :restaurant_address
+      t.string :address
       t.float :latitude
       t.float :longitude
       t.date :day
       t.float :rate
-      
+
 
       t.timestamps
     end

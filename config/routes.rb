@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   }
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
     root :to =>'user/homes#top'
-    get 'about' => 'user/products#about'
+    get 'about' => 'user/homes#about'
     get 'user/search/search'
 
     scope module: :user do

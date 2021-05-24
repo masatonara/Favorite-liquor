@@ -1,3 +1,44 @@
 // Place all the styles related to the user/homes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+//about
+
+.about-all-box {
+  text-align: center;
+}
+
+.about-top {
+  border-bottom: solid 3px #a9a9a9;
+}
+
+.about-title-image {
+  margin: 50px auto;
+  border-bottom: solid 3px #a9a9a9;
+}
+
+.about-title-image1 {
+  margin: 50px auto;
+}
+
+.about-box1  {
+  margin: 50px auto;
+  border-bottom: solid 3px #a9a9a9;
+}
+
+.about-image {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  margin: 30px auto;
+  width: 100%;
+}
+
+.about-image-box {
+  margin: auto;
+}
+
+.about-image-text {
+  margin-top: 10px;
+}

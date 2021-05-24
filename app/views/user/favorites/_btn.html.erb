@@ -1,5 +1,0 @@
-<% if liquor.favorited_by?(current_user) %>
-  <%= link_to liquor.favorites.count, liquor_favorites_path(liquor), method: :delete, class: "fas fa-heart heart_red" %>
-<% else %>
-  <%= link_to liquor.favorites.count, liquor_favorites_path(liquor), method: :post, class: "fas fa-heart heart_blue" %>
-<% end %>

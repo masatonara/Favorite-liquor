@@ -34,12 +34,36 @@
               </div>
             </div>
           </li>
-          <li><%= link_to '投稿', new_liquor_path, class: "btn btn-success mx-1" %></li>
+          <li><%= link_to '', new_liquor_path, class: "btn btn-success mx-1" %></li>
         <% else %>
-          <li><%= link_to ' Home',root_path,class: 'fas fa-home nav-link text-light' %></li>
-          <li><%= link_to ' About',about_path,class: 'fas fa-link nav-link text-light' %></li>
-          <li><%= link_to ' sign up', new_user_registration_path,class: 'fas fa-user-plus nav-link text-light' %></li>
-          <li><%= link_to ' login', new_user_session_path ,class: 'fas fa-sign-in-alt nav-link text-light'%></li>
+          <li>
+            <button type="button" class="btn btn-light mx-1" data-toggle="tooltip" data-placement="bottom" title="home">
+              <%= link_to root_path do %>
+                <i class="fas fa-home"></i>
+              <% end %>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="btn btn-light mx-1" data-toggle="tooltip" data-placement="bottom" title="What's Favorite Liquor?">
+              <%= link_to about_path do %>
+                <i class="fas fa-glass-martini"></i>
+              <% end %>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="btn btn-light mx-1" data-toggle="tooltip" data-placement="bottom" title="SIGN UP">
+              <%= link_to new_user_registration_path do %>
+                <i class="fas fa-user-plus"></i>
+              <% end %>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="btn btn-light mx-1" data-toggle="tooltip" data-placement="bottom" title="LOG IN">
+              <%= link_to new_user_session_path do %>
+                <i class="fas fa-sign-in-alt"></i>
+              <% end %>
+            </button>
+          </li>
         <% end %>
         </ul>
       </div>

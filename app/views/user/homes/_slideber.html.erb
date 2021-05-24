@@ -1,0 +1,10 @@
+
+<div id="slideber">
+ <div class="slider">
+  <% @randam.each do |liquor| %>
+     <%= link_to liquor_path(liquor) do %>
+      <div><%= attachment_image_tag liquor, :liquor_image, :fill, 300, 300, size: "300x300" %></div>
+    <% end %>
+  <% end %>
+  </div>
+ </div>

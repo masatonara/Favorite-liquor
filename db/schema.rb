@@ -53,7 +53,7 @@ ActiveRecord::Schema.define(version: 2021_05_18_062200) do
     t.string "liquor_image_id"
     t.text "introduction"
     t.string "restaurant_name"
-    t.text "restaurant_address"
+    t.string "address"
     t.float "latitude"
     t.float "longitude"
     t.date "day"

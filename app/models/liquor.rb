@@ -5,6 +5,10 @@ class Liquor < ApplicationRecord
 	has_many :comments, dependent: :destroy
 	attachment :liquor_image, destroy: false
 
+  geocoded_by :address
+  after_validation :geocode
+
+
 
 	def favorited_by?(user)
 		favorites.where(user_id: user.id).exists?
@@ -22,8 +26,10 @@ class Liquor < ApplicationRecord
     end
   end
 
-  geocoded_by :restaurant_address
-  after_validation :geocode, if: :restaurant_address_changed?
+
+  validates :name, presence: true
+  validates :introduction, presence: true, length: { maximum: 200 }
+  validates :day, presence: true
 
   validates :rate, numericality: {
     less_than_or_equal_to: 5,
