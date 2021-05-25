@@ -2,15 +2,15 @@
   <% liquor.comments.each do |comment| %>
     <% comment_user = comment.user %>
     <tr>
-    	<td>
+    	<td class="current-user-plofile">
     		<%= link_to user_path(comment_user), class: "user_#{comment_user.id}" do %>
       		<%= attachment_image_tag comment_user, :user_image, :fill, 50, 50, fallback: "no_image.jpeg", size: "50x50" %><br>
-      		<%= comment_user.name %>
+      		<%= comment_user.name  %>
     		<% end %>
     	</td>
-    	<td><%= comment.comment %></td>
+    	<td class="current-user-comment"><%= comment.comment %></td>
     	<% if current_user == comment_user %>
-      	<td><%= link_to 'Destroy', liquor_comment_path(comment.liquor_id, comment.id), class: 'btn-sm btn-danger', method: :delete, remote: true %></td>
+      	<td class="destroy-btn"><%= link_to 'Destroy', liquor_comment_path(comment.liquor_id, comment.id), class: 'btn-sm btn-danger', method: :delete, remote: true %></td>
     	<% end %>
     </tr>
   <% end %>

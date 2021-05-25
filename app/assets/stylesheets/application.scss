@@ -22,6 +22,7 @@
 @import "slick-theme";
 @import "slick";
 
+//fontの読み込み
 @import url('https://fonts.googleapis.com/css?family=Alegreya+Sans+SC:300');
 
 
@@ -42,11 +43,13 @@ body{
 	font-size: 12px;
 }
 
+
 #flash {
   text-align: center;
   color: #fff;
   font-size: 16px;
 }
+
 
 //footer部分
 footer {
@@ -61,7 +64,7 @@ footer {
 //search
 .search {
   text-align: center;
-  margin-top: 20px;
+  margin-top: 80px;
 }
 
 //top背景
@@ -165,15 +168,3 @@ footer {
   color: #fff;
 }
 
-
-
-
-#slideber {
-  display: flex;
-  justify-content: center;
-}
-
-.slider {
-  width: 100%;
-  height: 600px;
-}

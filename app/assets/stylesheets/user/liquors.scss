@@ -16,9 +16,22 @@
 //liquor/new部分
 
 .liquor-new {
-  margin: 10px;
+  margin: 20px;
+  text-align: center;
 }
 
+.shop-form-list {
+  font-size: 20px;
+  margin-top: 30px;
+}
+
+#bar {
+ display: none;
+}
+
+.create-btn {
+  margin: 30px;
+}
 
 //liquor/show部分
 .liquor-show {
@@ -107,6 +120,43 @@
   height: 400px;
 }
 
+.edit-btn {
+  margin: 20px 80px;
+}
+
+.comment-favorite {
+  margin: 20px 80px;
+}
+
+.comments {
+  width: 100%;
+  background: rgba(255,255,255,0.5);
+  padding: 10px 20px;
+}
+
+.current-user-plofile {
+  font-size: 16px;
+  color: #fff;
+  padding: 0px 20px 0px 0px;
+  text-align: center
+}
+
+.current-user-comment {
+  padding: 0px 50px;
+  font-size: 20px;
+  text-align: center
+}
+
+.destroy-btn {
+  padding: 0px 100px;
+}
+
+//edit
+
+.edit-liquor {
+  text-align: center;
+  margin: 50px;
+}
 
 
 //user/show

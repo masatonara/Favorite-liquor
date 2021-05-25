@@ -3,6 +3,29 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
+//スライドページ
+.slider-title {
+  margin-top: 50px;
+  color: #fff;
+  text-align: center;
+}
+
+.liquor-slider {
+  width: 100%;
+  background-color: rgba( 0, 0, 0, 0.5);
+  margin-top: 100px;
+  padding: 60px 40px 30px 45px;
+}
+
+.slider-box {
+  width: 100%;
+}
+
+.slider-image-name {
+  font-size: 16px;
+  color: #fff;
+}
+
 //about
 
 .about-all-box {

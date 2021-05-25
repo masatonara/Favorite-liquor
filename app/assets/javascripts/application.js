@@ -20,18 +20,39 @@
 //= require turbolinks
 //= require_tree .
 
-<!-- Note: A custom script is used to activate tooltips:
+
+
+$(function() {
+  var $win = $(window),
+      $header = $('header'),
+      headerHeight = $header.outerHeight(),
+      startPos = 0;
+
+  $win.on('load scroll', function() {
+    var value = $(this).scrollTop();
+    if ( value > startPos && value > headerHeight ) {
+      $header.css('top', '-' + headerHeight + 'px');
+    } else {
+      $header.css('top', '0');
+    }
+    startPos = value;
+  });
+});
+
 
 $(function(){
   $('[data-toggle="tooltip"]').tooltip();
 });
--->
 
-$(document).on('turbolinks:load', function(){
-  $('.slideber').slick({
-    slidesToShow: 2,
-  slidesToScroll: 1,
-  autoplay: true,
-  autoplaySpeed: 2000,
+$(document).on('turbolinks:load', function() {
+  /* global $ */
+  $('.slider-item').slick({
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    autoplay: true,
+    dots: true,
+    adaptiveHeight: false,
+    speed: 1800,
+    pauseOnHover: true
   });
 });

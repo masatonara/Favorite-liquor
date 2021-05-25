@@ -68,22 +68,27 @@
         </tr>
       </table>
     </div>
-    <div class="col-md-12">
-    <% if @liquor.user == current_user %>
-      <div><%= link_to 'Edit', edit_liquor_path(@liquor), class: "btn btn-sm btn-success edit_liquor_#{@liquor.id}" %></div>
-      <div><%= link_to 'Destroy', liquor_path(@liquor), method: :delete, data: { confirm: '本当に消しますか？' }, class: "btn btn-sm btn-danger destroy_liquor_#{@liquor.id}"%></div>
-    <% end %>
-    <div class="comments">
-      <%= render 'user/comments/comment', liquor: @liquor %>
+
+    <div class="col-md-12 edit-btn">
+      <% if @liquor.user == current_user %>
+        <%= link_to 'Edit', edit_liquor_path(@liquor), class: "btn btn-sm btn-success edit_liquor_#{@liquor.id}" %>
+        <%= link_to 'Destroy', liquor_path(@liquor), method: :delete, data: { confirm: '本当に消しますか？' }, class: "btn btn-sm btn-danger destroy_liquor_#{@liquor.id}"%>
+      <% end %>
     </div>
-    <div class="input-group">
-      <%= form_with model:[@liquor,@comment] do |f| %>
-      <div class="form">
-        <%= f.text_field :comment, size:"40x5", class: "form-control" %>
-        <%= f.submit '送信', class: "btn btn-success" %>
+
+    <div class="col-md-12 comment-favorite">
+      <div class="comments">
+        <%= render 'user/comments/comment', liquor: @liquor %>
       </div>
-    <% end %>
+      <div class="input-group　comment-form">
+        <%= form_with model:[@liquor,@comment] do |f| %>
+        <div class="form">
+          <%= f.text_field :comment, size:"40x5", class: "form-control" %>
+          <%= f.submit '送信', class: "btn btn-success" %>
+        </div>
+      <% end %>
+      </div>
     </div>
-    </div>
+
   </div>
 </div>
