@@ -1,5 +1,4 @@
 class ApplicationController < ActionController::Base
-
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   protected
@@ -12,13 +11,11 @@ class ApplicationController < ActionController::Base
     root_path
   end
 
-
   def configure_permitted_parameters
-   devise_parameter_sanitizer.permit(:sign_up,
-  	keys: [:name, :email])
+    devise_parameter_sanitizer.permit(:sign_up,
+                                      keys: [:name, :email])
 
-     #sign_upの際にnameのデータ操作を許。追加したカラム。
-  		devise_parameter_sanitizer.permit(:sign_in, keys: [:email])
-
+    # sign_upの際にnameのデータ操作を許。追加したカラム。
+    devise_parameter_sanitizer.permit(:sign_in, keys: [:email])
   end
 end

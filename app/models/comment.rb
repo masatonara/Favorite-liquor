@@ -1,7 +1,6 @@
 class Comment < ApplicationRecord
-    belongs_to :user
-	  belongs_to :liquor
+  belongs_to :user
+  belongs_to :liquor
 
-	validates :comment, presence: true
-    
+  validates :comment, presence: true
 end

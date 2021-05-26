@@ -8,13 +8,13 @@ class User::LiquorsController < ApplicationController
   end
 
   def map
-  results = Geocoder.search(params[:address])
-  @latlng = results.first.coordinates
-  # これでmap.js.erbで、経度緯度情報が入った@latlngを使える。
+    results = Geocoder.search(params[:address])
+    @latlng = results.first.coordinates
+    # これでmap.js.erbで、経度緯度情報が入った@latlngを使える。
 
-  respond_to do |format|
-    format.js
-  end
+    respond_to do |format|
+      format.js
+    end
   end
 
   def index
@@ -56,7 +56,8 @@ class User::LiquorsController < ApplicationController
   private
 
   def liquor_params
-    params.require(:liquor).permit(:liquor_image, :name, :introduction, :genre_id, :restaurant_name, :address, :day, :rate, :latitude, :longitude)
+    params.require(:liquor).permit(:liquor_image, :name, :introduction, :genre_id, :restaurant_name,
+                                   :address, :day, :rate, :latitude, :longitude)
   end
 
   def ensure_correct_user
@@ -65,5 +66,4 @@ class User::LiquorsController < ApplicationController
       redirect_to liquors_path
     end
   end
-
 end

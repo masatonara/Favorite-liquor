@@ -1,5 +1,4 @@
 class User::UsersController < ApplicationController
-
   before_action :authenticate_user!
   before_action :ensure_correct_user, only: [:edit, :update]
 
@@ -15,12 +14,12 @@ class User::UsersController < ApplicationController
   end
 
   def edit
-     @user = User.find(params[:id])
-      if @user == current_user
-        render :edit
-      else
-        redirect_to user_path(current_user)
-      end
+    @user = User.find(params[:id])
+    if @user == current_user
+      render :edit
+    else
+      redirect_to user_path(current_user)
+    end
   end
 
   def update
@@ -31,8 +30,6 @@ class User::UsersController < ApplicationController
       render :edit
     end
   end
-
-
 
   private
 
@@ -46,5 +43,4 @@ class User::UsersController < ApplicationController
       redirect_to user_path(current_user)
     end
   end
-
 end
