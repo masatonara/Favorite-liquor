@@ -1,10 +1,10 @@
 <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
-<h2 class="slider-title"><i class="fas fa-glass-whiskey"></i>  おすすめ投稿</h2>
+<h2 class="slider-title"><i class="fas fa-glass-whiskey"></i>  NEW POST</h2>
 
 <div class="liquor-slider">
  <div class="slider-item slider-box">
-  <% random.each do |liquor| %>
+  <% @liquors.last(6).each do |liquor| %>
      <%= link_to liquor_path(liquor) do %>
       <div class="slider-image"><%= attachment_image_tag liquor, :liquor_image, :fill, 300, 300, size: "300x300" %></div>
       <p class="slider-image-name"><%= liquor.name %></p>
