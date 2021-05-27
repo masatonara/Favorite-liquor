@@ -8,70 +8,87 @@
 
 Genre.create!(
     genre_name: "ビール",
+    is_valid: [['有効', true], ['無効', false]]
   )
 
   Genre.create!(
     genre_name: "ワイン",
+    is_valid: [['有効', true], ['無効', false]]
   )
 
   Genre.create!(
     genre_name: "焼酎",
+    is_valid: [['有効', true], ['無効', false]]
   )
 
   Genre.create!(
     genre_name: "日本酒",
+    is_valid: [['有効', true], ['無効', false]]
   )
 
   Genre.create!(
     genre_name: "果実酒",
+    is_valid: [['有効', true], ['無効', false]]
   )
 
   Genre.create!(
     genre_name: "ウイスキー",
+    is_valid: [['有効', true], ['無効', false]]
   )
 
   Genre.create!(
     genre_name: "ブランデー",
+    is_valid: [['有効', true], ['無効', false]]
   )
 
   Genre.create!(
     genre_name: "カクテル",
+    is_valid: [['有効', true], ['無効', false]]
   )
 
   Genre.create!(
     genre_name: "ラム",
+    is_valid: [['有効', true], ['無効', false]]
   )
 
   Genre.create!(
     genre_name: "ウォッカ",
+    is_valid: [['有効', true], ['無効', false]]
   )
 
   Genre.create!(
     genre_name: "ジン",
+    is_valid: [['有効', true], ['無効', false]]
   )
 
   Genre.create!(
     genre_name: "テキーラ",
+    is_valid: [['有効', true], ['無効', false]]
   )
 
   Genre.create!(
     genre_name: "リキュール（香草・薬草系）",
+    is_valid: [['有効', true], ['無効', false]]
   )
 
    Genre.create!(
     genre_name: "リキュール（果実系）",
+    is_valid: [['有効', true], ['無効', false]]
   )
 
    Genre.create!(
     genre_name: "リキュール（ナッツ・種子系）",
+    is_valid: [['有効', true], ['無効', false]]
   )
 
    Genre.create!(
     genre_name: "リキュール（その他）",
+    is_valid: [['有効', true], ['無効', false]]
   )
 
    Genre.create!(
     genre_name: "その他",
+    is_valid: [['有効', true], ['無効', false]]
   )
 
 
