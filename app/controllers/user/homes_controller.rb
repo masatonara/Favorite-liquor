@@ -1,7 +1,7 @@
 class User::HomesController < ApplicationController
   def top
     @user = current_user
-    @random = Liquor.order('RANDOM()').limit(15)
+    @random = Liquor.order('RAND()').limit(15)
   end
 
   def about
