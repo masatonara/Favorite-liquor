@@ -4,7 +4,7 @@
 
 <div class="liquor-slider">
  <div class="slider-item slider-box">
-  <% @randam.each do |liquor| %>
+  <% random.each do |liquor| %>
      <%= link_to liquor_path(liquor) do %>
       <div class="slider-image"><%= attachment_image_tag liquor, :liquor_image, :fill, 300, 300, size: "300x300" %></div>
       <p class="slider-image-name"><%= liquor.name %></p>
