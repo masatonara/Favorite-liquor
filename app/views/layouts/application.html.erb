@@ -7,7 +7,7 @@
     <script src="https://kit.fontawesome.com/*******.js" crossorigin="anonymous"></script>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    
+
 
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
@@ -19,18 +19,22 @@
     <div id="header">
       <%= render "layouts/header" %>
     </div>
+
+  <main>
     <% if user_signed_in? %>
       <div class="search"><%= render 'layouts/search' %></div>
     <% end %>
-    
+
     <div id="flash">
       <%= render "layouts/flash" %>
     </div>
 
     <%= yield %>
+  </main>
 
     <div id="footer">
       <%= render "layouts/footer" %>
     </div>
+
   </body>
 </html>

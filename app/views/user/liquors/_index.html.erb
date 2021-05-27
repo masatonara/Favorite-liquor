@@ -16,9 +16,8 @@
           </p>
           <p class="card-text">説明：<%= liquor.introduction %></p>
           <div id="favorite_<%= liquor.id %>">
-             <%= render partial: 'user/favorites/favorite', locals: { liquor: liquor} %>
+             <%= render partial: 'user/favorites/favorite', locals: { liquor: liquor} %>  コメント数: <%= liquor.comments.count %>
           </div>
-          <div class="comments">コメント数: <%= liquor.comments.count %></div>
         </div>
       </div>
     </div>

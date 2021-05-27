@@ -5,9 +5,12 @@
         <% if @model == 'user' %>
         	<h3>Users search for "<%= @content %>"</h3>
           <%= render 'user/users/index', users: @records %>
-        <% elsif @model == 'book' %>
-        	<h3>Books search for "<%= @content %>"</h3>
+        <% elsif @model == 'liquor' %>
+        	<h3>Liquor search for "<%= @content %>"</h3>
           <%= render 'user/liquors/index', liquors: @records %>
+        <% elsif @model == 'genre' %>
+        	<h3>Genre search for "<%= @content %>"</h3>
+          <%= render 'user/liquors/index', genres: @records %>
         <% end %>
       </div>
     </div>

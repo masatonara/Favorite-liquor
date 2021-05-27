@@ -23,6 +23,7 @@ class Liquor < ApplicationRecord
       Liquor.where('name LIKE ?', '%' + content + '%')
     end
   end
+  
 
   validates :name, presence: true
   validates :introduction, presence: true, length: { maximum: 200 }

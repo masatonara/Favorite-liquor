@@ -7,18 +7,9 @@ class User::LiquorsController < ApplicationController
     @comment = Comment.new
   end
 
-  def map
-    results = Geocoder.search(params[:address])
-    @latlng = results.first.coordinates
-    # これでmap.js.erbで、経度緯度情報が入った@latlngを使える。
-
-    respond_to do |format|
-      format.js
-    end
-  end
 
   def index
-    @liquors = Liquor.all
+    @liquors = Liquor.all.order(id: "DESC")
     @users = User.all.order(:id)
   end
 
