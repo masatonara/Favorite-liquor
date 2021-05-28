@@ -7,7 +7,7 @@
           <%= render 'user/users/index', users: @records %>
         <% elsif @model == 'liquor' %>
         	<h3>Liquor search for "<%= @content %>"</h3>
-          <%= render 'user/liquors/index', liquors: @records %>
+          <%= render 'user/liquors/post', liquors: @records %>
         <% elsif @model == 'genre' %>
         	<h3>Genre search for "<%= @content %>"</h3>
           <%= render 'user/liquors/index', genres: @records %>

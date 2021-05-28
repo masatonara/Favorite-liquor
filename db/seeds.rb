@@ -56,7 +56,7 @@ end
 
 10.times do |n|
     Liquor.create!(
-      user_id: "1",
+      user_id: "5",
       name: "beer#{n + 1}",
       introduction: "This beer is the best",
       restaurant_name: "bar",
