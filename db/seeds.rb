@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Genre.create!(
+Genre.create!([
     {genre_name: 'ビール'},
     {genre_name: 'ワイン'},
     {genre_name: '焼酎'},
@@ -24,7 +24,7 @@ Genre.create!(
     {genre_name: 'リキュール（ナッツ・種子系）'},
     {genre_name: 'リキュール（その他）'},
     {genre_name: 'その他'}
-  )
+  ])
   
 10.times do |n|
     Liquor.create!(
