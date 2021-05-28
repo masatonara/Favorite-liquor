@@ -44,10 +44,7 @@
           });
         </script>
 
-        <div class="form-group genre">
-          <%= f.label :"ジャンル", class: "col-sm-5 control-label" %><br/>
-          <%= f.collection_select(:genre_id, Genre.all, :id, :genre_name, prompt: "-- 選択してください --", class: "custom-select col-sm-7 genre_id") %>
-        </div>
+       <%= render 'user/liquors/genre_form', liquor: @liquor %>
 
 
         <!-- お店記入欄。普段は隠す　-->
@@ -72,7 +69,7 @@
         </div>
 
         <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.js"></script>
-        
+
         <!-- チエックボタンが押されたら表示　-->
         <script>
         $(function(){

@@ -20,14 +20,13 @@
           <div class="liquor-name">
             <div class="liquor-name-text">
               <i class="fas fa-glass-martini-alt"></i> <%= @liquor.name %>
-              <%= @liquor.genre.genre_name %>
             </div>
           </div>
           <div class="liquor-introduction">
             <%= @liquor.introduction %>
           </div>
           <div class="liquor-introduction">
-            <%= @liquor.genre.genre_name %>
+            ジャンル： <%= @liquor.liquor_genre %>
           </div>
           <div class="liquor-rate">
             <i class="far fa-star"></i> <%= @liquor.rate %>点

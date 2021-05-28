@@ -52,6 +52,7 @@ ActiveRecord::Schema.define(version: 2021_05_18_062200) do
     t.string "name"
     t.string "liquor_image_id"
     t.text "introduction"
+    t.string "liquor_genre"
     t.string "restaurant_name"
     t.string "address"
     t.float "latitude"

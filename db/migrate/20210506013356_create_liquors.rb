@@ -6,6 +6,7 @@ class CreateLiquors < ActiveRecord::Migration[5.2]
       t.string :name
       t.string :liquor_image_id
       t.text :introduction
+      t.string :liquor_genre
       t.string :restaurant_name
       t.string :address
       t.float :latitude
