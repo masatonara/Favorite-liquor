@@ -90,8 +90,12 @@ footer {
 }
 
 .top-title {
-  margin-top: 100px;
+  margin-top: 200px;
   color: #fff;
+}
+
+.top-title span {
+  color: #00bfff;
 }
 
 .signup-button {
@@ -108,6 +112,8 @@ footer {
   margin-top: 20px;
   color: #fff;
 }
+
+
 //log_in部分
 .login-content {
   margin: 200px 150px 0px 0px;
