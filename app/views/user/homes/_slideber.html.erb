@@ -6,7 +6,7 @@
  <div class="slider-item slider-box">
   <% @liquors.last(6).each do |liquor| %>
      <%= link_to liquor_path(liquor) do %>
-      <div class="slider-image"><%= attachment_image_tag liquor, :liquor_image, :fill, 300, 300, size: "300x300" %></div>
+      <div class="slider-image"><%= attachment_image_tag liquor, :liquor_image, :fill, 300, 300, format: 'jpg', fallback: "no_image.jpg",size: "300x300" %></div>
       <p class="slider-image-name"><%= liquor.name %></p>
     <% end %>
    <% end %>
