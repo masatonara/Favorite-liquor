@@ -3,7 +3,7 @@
 
     <div class='col-md-5'>
   		<div class="liquor-image">
-  		  <%= attachment_image_tag　@liquor, :liquor_image, :fill, 400, 400, fallback: "no_image.jpg" %>
+  		  <%= attachment_image_tag　@liquor, :liquor_image, :fill, 400, 400, format: 'jpg', fallback: "no_image.jpg" %>
   		</div>
   	</div>
 
@@ -12,7 +12,7 @@
           <div class="liquor-user">
             <div class="liquor-user-image">
               <%= link_to user_path(@liquor.user) do %>
-                <%= attachment_image_tag @liquor.user, :user_image, :fill, 50, 50, fallback: "no_image.jpg",size: "50x50", class:"rounded-circle";  %>
+                <%= attachment_image_tag @liquor.user, :user_image, :fill, 50, 50, format: 'jpg', fallback: "no_image.jpg",size: "50x50", class:"rounded-circle";  %>
               <% end %>
               <span class="liquor-user-name"><%= @liquor.user.name %></span>
             </div>
