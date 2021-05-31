@@ -10,7 +10,7 @@ class User::LiquorsController < ApplicationController
 
   def index
     @liquors = Liquor.all.order(id: "DESC")
-    @users = User.all.order(:id)
+    @users = User.order("RAND()").limit(5)
   end
 
   def new

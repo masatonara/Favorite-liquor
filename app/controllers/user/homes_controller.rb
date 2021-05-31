@@ -1,7 +1,7 @@
 class User::HomesController < ApplicationController
   def top
     @user = current_user
-    @liquors = Liquor.all.order(:id)
+    @liquors = Liquor.order("RAND()").limit(5)
   end
 
   def about
