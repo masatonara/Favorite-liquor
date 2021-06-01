@@ -5,6 +5,8 @@ class User::FavoritesController < ApplicationController
     @liquor = Liquor.find(params[:liquor_id])
     favorite = @liquor.favorites.new(user_id: current_user.id)
     favorite.save
+    
+    
   end
 
   def destroy

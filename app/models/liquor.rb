@@ -1,6 +1,7 @@
 class Liquor < ApplicationRecord
   belongs_to :user
   has_many :favorites, dependent: :destroy
+  has_many :tags, dependent: :destroy
   has_many :comments, dependent: :destroy
   attachment :liquor_image, destroy: false
 
@@ -22,7 +23,7 @@ class Liquor < ApplicationRecord
       Liquor.where('name LIKE ?', '%' + content + '%')
     end
   end
-  
+
 
   validates :name, presence: true
   validates :introduction, presence: true, length: { maximum: 200 }

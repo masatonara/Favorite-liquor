@@ -72,6 +72,12 @@
       </table>
     </div>
 
+    <div class="col-md-12 liquor-tags">
+      <% @liquor.tags.each do |tag| %>
+        <span class="shadow badge badge-warning p-2 tag">#<%= tag.name %></span>
+        <% end %>
+  	</div>
+
     <div class="col-md-12 edit-btn">
       <% if @liquor.user == current_user %>
         <%= link_to 'Edit', edit_liquor_path(@liquor), class: "btn btn-sm btn-success edit_liquor_#{@liquor.id}" %>

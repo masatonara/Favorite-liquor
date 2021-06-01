@@ -10,7 +10,7 @@ class User::LiquorsController < ApplicationController
 
   def index
     @liquors = Liquor.all.order(id: "DESC")
-    @users = User.order("RAND()").limit(5)
+    @users = User.order(:id)
   end
 
   def new
@@ -21,6 +21,10 @@ class User::LiquorsController < ApplicationController
     @liquor = Liquor.new(liquor_params)
     @liquor.user_id = current_user.id
     if @liquor.save
+      tags = Vision.get_image_data(@liquor.liquor_image)
+      tags.each do |tag|
+        @liquor.tags.create(name: tag)
+      end
       redirect_to liquor_path(@liquor), success: "投稿されました"
     else
       @liquors = Liquor.all
