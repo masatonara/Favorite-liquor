@@ -1,0 +1,14 @@
+<table class='table'>
+  <tbody>
+   <% @genres.each do |genre| %>
+      <tr>
+        <td>
+          <strong><%= genre.genre_name %></strong>
+        </td>
+        <td>
+          <%= link_to "一覧を表示", genre_path(genre) %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
