@@ -1,4 +1,3 @@
 $("#liquor_<%= @liquor.id %> .comments-count").html("コメント数: <%= @liquor.comments.count %>");
 $(".comments").html("<%= j(render 'user/comments/comment', liquor: @liquor) %>");
 $("#comment_comment").val("");
-

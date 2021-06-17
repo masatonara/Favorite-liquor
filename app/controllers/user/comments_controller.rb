@@ -10,6 +10,7 @@ class User::CommentsController < ApplicationController
       render 'error'
     end
   end
+  
 
   def destroy
     @liquor = Liquor.find(params[:liquor_id])
