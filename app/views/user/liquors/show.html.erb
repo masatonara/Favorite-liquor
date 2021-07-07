@@ -48,7 +48,8 @@
             <div id="favorite_<%= @liquor.id %>">
              <%= render partial: 'user/favorites/favorite', locals: { liquor: @liquor} %>
           </div>
-            <div class="comments-count"><i class="fas fa-comments"></i> コメント数: <%= @liquor.comments.count %></comment>
+          <div id="liquor_<%= @liquor.id %>.comments-count">
+            コメント数: <%= @liquor.comments.count %>
           </div>
           <div class="liquor-day"><i class="fas fa-calendar-alt"></i> <%= @liquor.day %></div>
         </div>
@@ -86,8 +87,10 @@
     </div>
 
     <div class="col-md-12 comment-favorite">
-      <div class="comments">
-        <%= render 'user/comments/comment', liquor: @liquor %>
+      <div id="comments">
+        <div class="comments">
+          <%= render 'user/comments/comment', liquor: @liquor %>
+        </div>
       </div>
       <div class="input-group　comment-form">
         <%= form_with model:[@liquor,@comment] do |f| %>

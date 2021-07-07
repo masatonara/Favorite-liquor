@@ -10,11 +10,9 @@
 	       </div>
 	    <% if current_user != user %>
 	    <div class="p-2">
-        <% if current_user.following?(user) %>
-          <%= link_to "フォロー外す", user_relationships_path(user.id), method: :delete, class: "btn btn-info" %>
-        <% else %>
-          <%= link_to "フォローする", user_relationships_path(user.id), method: :post, class: "btn btn-success" %>
-        <% end %>
+	      <div id="follow-btn_<%= @user.id %>">
+          <%= render 'user/relationships/follow-btn', user: @user %>
+        </div>
       </div>
       <% else %>
       <div class="p-2">
@@ -29,10 +27,10 @@
 
 	  <div class="user-follow d-flex align-items-start">
 	    <div class="p-2">
-        <h5>follows: <%= link_to user.followings.count, user_followings_path(user) %></h5>
+        <h5 id="followings-count_<%= user.id %>">follows: <%= link_to current_user.followings.count, user_followings_path(user) %></h5>
       </div>
       <div class="p-2">
-        <h5>followers: <%= link_to user.followers.count, user_followers_path(user) %></h5>
+        <h5 id="followers-count_<%= user.id %>">followers: <%= link_to user.followers.count, user_followers_path(user) %></h5>
       </div>
 
     </div>
