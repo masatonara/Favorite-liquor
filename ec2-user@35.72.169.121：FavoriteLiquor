@@ -1,4 +1,0 @@
-DB_USERNAME="root"
-DB_PASSWORD="madopon83"
-DB_HOST="rds-mysql-server.cjjj4egawqud.ap-northeast-1.rds.amazonaws.com"
-DB_DATABASE="FavoriteLiquor"
