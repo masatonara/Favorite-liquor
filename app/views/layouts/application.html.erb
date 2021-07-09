@@ -19,22 +19,19 @@
     <div id="header">
       <%= render "layouts/header" %>
     </div>
+    <main>
 
-  <main>
     <% if user_signed_in? %>
-      <div class="search"><%= render 'layouts/search' %></div>
+      <div class="search">
+        <%= render 'layouts/search' %>
+      </div>
     <% end %>
 
     <div id="flash">
       <%= render "layouts/flash" %>
     </div>
-
     <%= yield %>
-  </main>
-
-    <div id="footer">
-      <%= render "layouts/footer" %>
-    </div>
-
+    </main>
+    <%= render "layouts/footer" %>
   </body>
 </html>
